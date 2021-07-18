@@ -1,14 +1,11 @@
+const navEl = document.querySelector("#categories");
 
-const navEl = document.querySelector('#categories');
-
-const navLinksEl = navEl.querySelectorAll('.item');
+const navLinksEl = navEl.querySelectorAll(".item");
 console.log(`В списке ${navLinksEl.length} категории`);
 
-for (let i = 0; i < navLinksEl.length; i++) {
-  const titleEl = navLinksEl[i].firstElementChild;
-  const itemsAnimallEl = titleEl.nextElementSibling.children.length;
+navLinksEl.forEach((caregory) => {
   console.log(`
-		Категория: ${titleEl.innerText}
-		Количество элементов: ${itemsAnimallEl}
+		Категория: ${caregory.firstElementChild.textContent}
+		Количество элементов: ${caregory.firstElementChild.nextElementSibling.children.length}
 	`);
-}
+});
